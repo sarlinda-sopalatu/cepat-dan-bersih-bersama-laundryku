@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="description" content="Laundry Kilat — Pesan laundry online, kelola toko dan pantau pesanan dalam satu website.">
+  <title>Laundry Kilat | Laundry Lebih Mudah</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%237c3aed'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle'%3E%F0%9F%A7%BA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/portal.css">
+  <link rel="stylesheet" href="css/neumorphism.css">
+  <script src="js/portal.js" defer></script>
+</head>
+<body>
+  <!-- LOADING -->
+  <div id="loading" class="startup"><div class="spinner"></div><strong>Menyiapkan Laundry Kilat...</strong></div>
+
+  <!-- AUTHENTICATION / REGISTRATION -->
+  <main class="auth-layout hidden" id="auth-layout">
+    <div class="auth-aside">
+      <a class="auth-logo" href="/" aria-label="Laundry Kilat beranda"><span class="logo-mark">✳</span> Laundry<span>Kilat</span></a>
+      <div class="auth-copy">
+        <span class="eyebrow">✦ SOLUSI LAUNDRY DIGITAL</span>
+        <h1>Cucian beres,<br><em>hidup lebih</em><br>praktis.</h1>
+        <p>Satu tempat untuk menemukan layanan laundry, melakukan pemesanan, dan mengembangkan bisnis laundry Anda.</p>
+        <div class="auth-points"><span>✓ Pesan dari rumah</span><span>✓ Pantau pesanan</span><span>✓ Kelola toko dengan mudah</span></div>
+      </div>
+      <div class="laundry-scene" aria-hidden="true">
+        <div class="float-bubble bubble-a">✦</div><div class="float-bubble bubble-b">●</div>
+        <div class="scene-card"><div class="scene-icon">🧺</div><div><b>Laundry selesai!</b><small>Pesananmu siap diambil 🎉</small></div><span class="scene-check">✓</span></div>
+        <div class="scene-machine"><div class="machine-top"><i></i><i></i><i></i></div><div class="machine-circle"><div class="machine-spin">🌊</div></div></div>
+        <div class="scene-star">✨</div>
+      </div>
+      <p class="auth-footer">© 2026 Laundry Kilat · Dibuat untuk pembeli & pemilik usaha</p>
+    </div>
+    <div class="auth-right">
+      <div class="auth-mobile-brand"><span class="logo-mark">✳</span> Laundry<strong>Kilat</strong></div>
+      <div class="auth-panel">
+        <div class="auth-tabs" id="auth-tabs" role="tablist" aria-label="Masuk atau daftar">
+          <button type="button" class="auth-tab selected" data-auth-tab="login">Masuk</button>
+          <button type="button" class="auth-tab" data-auth-tab="register">Daftar akun</button>
+        </div>
+        <section id="panel-login" class="auth-section">
+          <span class="pill-intro">👋 Selamat datang kembali</span>
+          <h2>Masuk ke akunmu</h2><p class="form-subtitle">Kelola cucian atau toko Anda dari satu tempat.</p>
+          <form id="form-login" class="form-stack">
+            <label>Email<input name="email" type="email" autocomplete="email" placeholder="nama@email.com" required></label>
+            <label>Kata sandi<div class="password-wrap"><input name="password" type="password" autocomplete="current-password" placeholder="Masukkan kata sandi" required><button type="button" data-toggle-password aria-label="Tampilkan kata sandi">◉</button></div></label>
+            <button type="button" id="goto-forgot" class="forgot-link">Lupa kata sandi?</button>
+            <button type="submit" class="btn primary btn-full">Masuk <span>→</span></button>
+          </form>
+          <details class="demo-accordion" id="demo-accordion">
+            <summary><span class="demo-symbol">✦</span><span><strong>Akun demonstrasi</strong><small>Klik untuk menampilkan semua peran</small></span><span class="demo-chevron">⌄</span></summary>
+            <div class="demo-list">
+              <button type="button" data-demo="buyer"><span>🛍️</span><span><b>Pembeli / pelanggan</b><small>Pesan dan pantau laundry</small></span><span>→</span></button>
+              <button type="button" data-demo="seller"><span>🏪</span><span><b>Pemilik toko</b><small>Kelola pesanan, toko dan kasir</small></span><span>→</span></button>
+              <p>Demo lokal tanpa email. Data simulasi terpisah dari akun asli. Jangan masukkan data pribadi.</p>
+            </div>
+          </details>
+          <p class="form-bottom">Belum punya akun? <button type="button" data-auth-tab="register" class="text-link">Daftar sekarang</button></p>
+        </section>
+        <section id="panel-register" class="auth-section hidden">
+          <span class="pill-intro">🌟 Bergabung bersama kami</span>
+          <h2>Buat akun baru</h2><p class="form-subtitle">Pilih peran akun Anda untuk memulai.</p>
+          <form id="form-register" class="form-stack">
+            <div class="role-label">Daftar sebagai siapa?</div>
+            <div class="role-grid" role="radiogroup" aria-label="Jenis akun">
+              <label class="role-card active"><input type="radio" name="role" value="buyer" checked><span class="role-icon">🛍️</span><strong>Pembeli</strong><small>Pesan & pantau laundry</small><span class="role-check">✓</span></label>
+              <label class="role-card"><input type="radio" name="role" value="seller"><span class="role-icon">🏪</span><strong>Pemilik toko</strong><small>Terima & kelola pesanan</small><span class="role-check">✓</span></label>
+            </div>
+            <div class="form-two"><label>Nama lengkap<input name="name" required minlength="2" placeholder="Nama Anda" autocomplete="name"></label><label>Nomor WhatsApp<input name="phone" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel"></label></div>
+            <label>Email aktif<input name="email" type="email" required placeholder="nama@email.com" autocomplete="email"></label>
+            <label>Kata sandi<div class="password-wrap"><input name="password" type="password" minlength="8" maxlength="128" required placeholder="Minimal 8 karakter" autocomplete="new-password"><button type="button" data-toggle-password aria-label="Tampilkan kata sandi">◉</button></div></label>
+            <div id="seller-register-fields" class="seller-register-fields hidden">
+              <label>Nama toko laundry<input name="shopName" placeholder="Contoh: Laundry Bersih Makassar"></label>
+              <div class="form-two"><label>Kota / lokasi<input name="city" placeholder="Makassar"></label><label>Alamat toko<input name="address" placeholder="Jl. Mawar No. 1"></label></div>
+            </div>
+            <button type="submit" class="btn primary btn-full">Buat akun <span>→</span></button>
+          </form>
+          <p class="form-bottom">Sudah punya akun? <button type="button" data-auth-tab="login" class="text-link">Masuk sekarang</button></p>
+        </section>
+        <section id="panel-forgot" class="auth-section hidden">
+          <span class="pill-intro">🔐 Keamanan akun</span><h2>Lupa kata sandi?</h2>
+          <p class="form-subtitle">Masukkan email terdaftar. Firebase akan mengirim tautan reset ke email akun yang terdaftar.</p>
+          <form id="form-forgot" class="form-stack"><label>Email akun<input type="email" name="email" placeholder="nama@email.com" autocomplete="email" required></label><button class="btn primary btn-full" type="submit">Kirim tautan reset <span>→</span></button></form>
+          <p id="firebase-warning" class="notice warning hidden">Firebase belum dikonfigurasi. Isi <code>FIREBASE_API_KEY</code> di file <code>.env</code>, lalu jalankan ulang server.</p>
+          <div id="reset-feedback" class="notice hidden" role="status"></div>
+          <p class="form-bottom"><button type="button" data-auth-tab="login" class="text-link">← Kembali ke login</button></p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- LOGGED IN DASHBOARD -->
+  <div id="app-layout" class="app-layout hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo"><span class="logo-mark">✳</span> Laundry<strong>Kilat</strong></div>
+      <div class="sidebar-label">MENU UTAMA</div>
+      <nav id="nav-items" aria-label="Menu utama"></nav>
+      <div class="sidebar-footer"><div class="sidebar-person"><div id="avatar-side" class="avatar">U</div><div class="sidebar-person-name"><strong id="side-name">Pengguna</strong><small id="side-role">Pembeli</small></div></div><button id="logout-side" class="logout-btn" type="button">↪ Keluar akun</button></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><div class="topbar-left"><button id="menu-toggle" class="icon-btn menu-toggle" type="button" aria-label="Buka menu">☰</button><div><p class="breadcrumb">Laundry Kilat / <span id="bread-current">Beranda</span></p><h2 id="top-title">Dashboard</h2></div></div><div class="topbar-right"><span id="demo-badge" class="demo-badge hidden">Mode demo</span><span class="top-greeting">Halo, <strong id="top-name">Pengguna</strong> 👋</span><span class="avatar" id="avatar-top">U</span></div></header>
+      <main id="dashboard-main" class="dashboard-main">
+        <section class="view" id="view-home"></section>
+        <section class="view hidden" id="view-shops"></section>
+        <section class="view hidden" id="view-orders"></section>
+        <section class="view hidden" id="view-store"></section>
+        <section class="view hidden" id="view-profile"></section>
+      </main>
+      <footer class="dashboard-footer">© 2026 Laundry Kilat <span>• Platform laundry untuk pembeli & pemilik toko</span></footer>
+    </div>
+  </div>
+
+  <!-- BUYER ORDER FORM -->
+  <div id="order-modal" class="modal-overlay hidden" role="presentation"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title"><div class="modal-header"><div><span class="eyebrow blue">BUAT PESANAN</span><h2 id="order-modal-title">Pesan laundry</h2><p id="modal-shop-name" class="text-muted"></p></div><button type="button" class="close-modal" data-close-modal aria-label="Tutup">×</button></div><form id="form-order" class="modal-form"><input type="hidden" name="shopId" id="order-shop-id"><div class="form-two"><label>Layanan<select id="order-service" name="serviceId" required></select></label><label>Paket pengerjaan<select id="order-speed" name="speedId" required><option value="reguler">Reguler · 2–3 hari</option><option value="kilat">Kilat · 1 hari (+25%)</option><option value="express">Express · ±6 jam (+50%)</option></select></label></div><div id="order-item-row" class="hidden"><label>Jenis barang (opsional)<select name="itemId" id="order-item"><option value="">Umum (tarif layanan)</option></select></label></div><div class="form-two"><label id="order-qty-label">Berat cucian (kg)<input id="order-quantity" name="amount" type="number" min="0.1" max="1000" step="0.1" value="2" required></label><label>Nomor WhatsApp<input name="phone" type="tel" id="order-phone" placeholder="08xxxxxxxxxx"></label></div><label>Alamat penjemputan / pengantaran<input name="address" placeholder="Alamat lengkap (jika perlu dijemput)"></label><label class="check-line"><input name="pickup" type="checkbox"> Saya ingin dijemput / diantar (konfirmasi dengan toko)</label><label>Catatan untuk toko<textarea name="notes" rows="3" placeholder="Contoh: Pisahkan pakaian putih, mohon hati-hati..."></textarea></label><div class="price-summary"><div><small>Estimasi harga</small><strong id="order-estimate">Rp 0</strong></div><p>Harga akhir dihitung oleh sistem berdasarkan layanan, paket, dan jumlah. Biaya tambahan antar-jemput dikonfirmasi toko.</p></div><button class="btn primary btn-full" type="submit">Kirim pesanan ke toko →</button></form></div></div>
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
